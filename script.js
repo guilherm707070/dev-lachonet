@@ -85,6 +85,6 @@ function updateCartModal() {
     style: "currency",
     currency: "BRL"
   });
-
-
+  
+  cardCalt.innerText=cart.length
 };
