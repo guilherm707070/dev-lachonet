@@ -60,7 +60,7 @@ function updateCartModal() {
 
   cart.forEach((item) => {
     const cardItemElement = document.createElement("div");
-    cardItemElement.classList.add("c", "justify-between", "mb-4", "flex-col")
+    cardItemElement.classList.add("flex", "justify-between", "mb-4", "flex-col")
     cardItemElement.innerHTML =
       `<div class="flex items-center justify-between"> 
          <div>
@@ -70,7 +70,7 @@ function updateCartModal() {
          </div>
         <div>
 
-         <button class="bg-red-400 rounded-md px-4 py-1">Remover</button>
+         <button class="remove-from-btn  bg-red-400 rounded-md px-4 py-1" data-name =${item.name}>Remover</button>
 
         </div>
     </div>`
@@ -78,13 +78,41 @@ function updateCartModal() {
     total += item.pricie * item.quantity
 
     cartItensConteiner.appendChild(cardItemElement)
-   
+   /*  bg-red-400 rounded-md px-4 py-1 */ 
+
   })
 
   cartTotal.textContent = total.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL"
   });
-  
-  cardCalt.innerText=cart.length
+
+  cardCalt.innerText = cart.length
 };
+cartItensConteiner.addEventListener("click", function (event) {
+
+
+  if (event.target.classList.contains("remove-from-btn")) {
+
+    const name = event.target.getAttribute("data-name")
+    removeItemCart(name)
+
+    
+  }
+
+});
+
+function removeItemCart(name) {
+  const index = cart.findIndex(item => item.name === name)
+  if (index !== -1) {
+    const item = cart[index]
+    if (item.quantity > 1) {
+      item.quantity -= 1
+      updateCartModal()
+      return;
+    }
+    cart.splice(index, 1);
+    updateCartModal()
+  }
+}
+
