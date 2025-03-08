@@ -168,24 +168,20 @@ checkoutBtn.addEventListener("click", function () {
   } else {
 
     const cartItem = cart.map((item) => {
+      
       return (
-        `${item.name} Quantidade: (${item.quantity}) preço R$: (${item.pricie.toFixed(2)})  | 
-        `
+        `*${item.name}* Quantidade: (${item.quantity})preço R$: (${item.pricie.toFixed(2)}) |   ` 
       )
+      
 
     }).join("")
     const mensage = encodeURIComponent(cartItem)
-    const phone = "73999313900"
-    window.open(`https://wa.me/${phone}?text=${mensage}Emdereço: ${aderessInput.value}`, "_blank")
+    const phone = "73982023570"
+    window.open(`https://wa.me/${phone}?text=${mensage}*Emdereço: ${aderessInput.value}*`,"_blank")
     cart = []
     updateCartModal()
 
   }
-
-
-
-
-
 })
 function checkRestalrantOpem() {
   const data = new Date();
