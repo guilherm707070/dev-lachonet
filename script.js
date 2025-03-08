@@ -6,12 +6,13 @@ const cartTotal = document.getElementById("card-total");
 const checkoutBtn = document.getElementById("checkout-btn");
 const clouseModalBtn = document.getElementById("close-modal-btn");
 const cardCalt = document.getElementById("cart-caunt");
-const aderessInput = document.getElementById("address");
+const aderessInput = document.getElementById("address-input");
 const addressWarn = document.getElementById("address-warn");
 
 let cart = [];
 
 /* abri modal */
+
 
 cartBtn.addEventListener("click", function () {
   updateCartModal()
@@ -78,7 +79,7 @@ function updateCartModal() {
     total += item.pricie * item.quantity
 
     cartItensConteiner.appendChild(cardItemElement)
-   /*  bg-red-400 rounded-md px-4 py-1 */ 
+
 
   })
 
@@ -97,7 +98,7 @@ cartItensConteiner.addEventListener("click", function (event) {
     const name = event.target.getAttribute("data-name")
     removeItemCart(name)
 
-    
+
   }
 
 });
@@ -116,3 +117,91 @@ function removeItemCart(name) {
   }
 }
 
+aderessInput.addEventListener("input", function (event) {
+  let inputvalue = event.target.value;
+  if (inputvalue !== "") {
+    aderessInput.classList.remove("border-red-800")
+    addressWarn.classList.add("hidden")
+
+  }
+
+})
+
+
+
+checkoutBtn.addEventListener("click", function () {
+
+
+
+
+  const isOpem = checkRestalrantOpem
+  if (!isOpem) {
+    Toastify({
+      text: "ops! estamos fechado no momento",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "left", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: { background: "#ef4444" }
+    }).showToast();
+    return;
+  }
+  if (cart.length === 0) {
+    return;
+  }
+
+  if (cart.length === 0) {
+
+    return;
+  }
+
+  if (aderessInput.value === "") {
+
+
+    addressWarn.classList.remove("hidden")
+
+    aderessInput.classList.add("border-red-800")
+
+  } else {
+
+    const cartItem = cart.map((item) => {
+      return (
+        `${item.name} Quantidade: (${item.quantity}) preço R$: (${item.pricie.toFixed(2)})|
+      `
+      )
+
+    }).join("")
+    const mensage = encodeURIComponent(cartItem)
+    const phone = "73999313900"
+    window.open(`https://wa.me/${phone}?text=${mensage}Emdereço: ${aderessInput.value}`, "_blank")
+    cart = []
+    updateCartModal()
+
+  }
+
+
+
+
+
+})
+function checkRestalrantOpem() {
+  const data = new Date();
+  const hora = data.getHours();
+  return hora >= 18 && hora < 22;
+
+}
+
+const spanItem = document.getElementById("date-span")
+const isOpem = checkRestalrantOpem();
+if (isOpem) {
+  spanItem.classList.remove("bg-red-500")
+  spanItem.classList.add("bg-green-600")
+
+} else {
+  spanItem.classList.remove("bg-green-600")
+  spanItem.classList.add("bg-red-500")
+
+}
