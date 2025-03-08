@@ -135,7 +135,7 @@ checkoutBtn.addEventListener("click", function () {
 
 
   const isOpem = checkRestalrantOpem
-  if (!isOpem) {
+  if (isOpem) {
     Toastify({
       text: "ops! estamos fechado no momento",
       duration: 3000,
