@@ -4,12 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta praperty="og:type" content="website" />
-    <meta praperty="og:title" content="DEV BURGER JGJS" />
-    <meta praperty="og:image" content="https://guilherm707070.github.io/dev-lachonet/src/img/thumbnail_13435420220330624488cabb22b.webp" />
-    <meta praperty="og:description" content="O menhor que ta tendo" />
-    <meta praperty="og:site_name" content="DEV_BURGER_JGJS" />
-
     <link
       rel="shortcut icon"
       href="src/img/thumbnail_13435420220330624488cabb22b.webp"
@@ -17,7 +11,11 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@0;1&family=League+Gothic&family=Outfit&family=Poppins:wght@400;500;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
@@ -30,12 +28,19 @@
       referrerpolicy="no-referrer"
     />
 
+    <meta praperty="og:type" content="website" />
+    <meta praperty="og:title" content="DEV BURGER JGJS" />
+    <meta
+      praperty="og:image"
+      content="https://guilherm707070.github.io/dev-lachonet/src/img/thumbnail_13435420220330624488cabb22b.webp"
+    />
+    <meta praperty="og:description" content="O menhor que ta tendo" />
+    <meta praperty="og:site_name" content="DEV_BURGER_JGJS" />
+
     <link rel="stylesheet" href="src/css/output.css" />
     <title>DEV_Hamburgeria JGJS</title>
   </head>
   <body>
-
-
     <header class="w-full h-[420px] bg-zinc-900 bg-home bg-cover bg-center">
       <div class="w-full h-full flex flex-col justify-center items-center">
         <img
@@ -54,17 +59,16 @@
         </div>
       </div>
     </header>
- 
 
     <h2 class="text-2xl md:text-5xl font-bold text-center mt-9 mb-6">
       Conheça nosso menu
     </h2>
- 
+
     <div id="menu">
       <main
         class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl"
       >
-
+        <!-- incil -->
         <div class="flex gap-3">
           <img
             src="src/img/hamb-1.png"
@@ -93,7 +97,7 @@
           </div>
         </div>
 
-       
+        <!-- fim -->
         <div class="flex gap-3">
           <img
             src="src/img/hamb-2.png"
@@ -122,7 +126,6 @@
           </div>
         </div>
 
-        
         <div class="flex gap-3">
           <img
             src="src/img/hamb-3.png"
@@ -151,7 +154,6 @@
           </div>
         </div>
 
-     
         <div class="flex gap-3">
           <img
             src="src/img/hamb-5.png"
@@ -180,7 +182,6 @@
           </div>
         </div>
 
-   
         <div class="flex gap-3">
           <img
             src="src/img/hamb-6.png"
@@ -235,22 +236,43 @@
             </div>
           </div>
         </div>
-
       </main>
 
       <div class="mx auto max-w-7-l px-5 my-2">
         <h2 class="font-bold text-3xl">Bebidas</h2>
       </div>
 
- 
       <div
         class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl"
         id="menu"
-    
+      >
+        <div class="flex gap-3 w-full">
+          <img
+            src="src/img/refri-2.png"
+            alt="Guarana lata"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div class="w-full">
+            <p class="font-bold">Guarana lata</p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">$6.00</p>
+              <button
+                class="bg-green-600 px-5 rounded-md add-to-card-btn"
+                data-name="Guarana lata"
+                data-pricie="6.00"
+              >
+                <i class="fa fa-card-plus text-sm text-white">🛒</i>
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div class="flex gap-3 w-full">
           <img
             src="src/img/refri-1.png"
-            alt="coca lata"
+            alt="Guarana lata"
             class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
           />
 
@@ -269,42 +291,22 @@
             </div>
           </div>
         </div>
-        <div class="flex gap-3 w-full">
-          <img
-            src="src/img/refri-2.png"
-            alt="Guarana lata"
-            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
-          />
-
-          <div class="w-full">
-            <p class="font-bold">Guarana lata</p>
-
-            <div class="flex items-center gap-2 justify-between mt-3">
-              <p class="font-bold text-lg">$6.00</p>
-              <button
-                class="bg-green-600 px-5 rounded-md add-to-card-btn"
-                data-name="Guarana_lata"
-                data-pricie="6.00"
-              >
-                <i class="fa fa-card-plus text-sm text-white">🛒</i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-      
       </div>
- 
     </div>
-  
+
     <div
       class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden"
       id="cart-modal"
     >
-      <div class="bg-white p-5 rounded-md max-h-90 min-w-[90%] md:min-w-[600px] laal">
+      <div
+        class="bg-white p-5 rounded-md max-h-90 min-w-[90%] md:min-w-[600px] laal"
+      >
         <h2 class="text-center font-bold text-3xl">Meu Carrinho</h2>
 
-        <div id="card-items" class="flex justify-between mb-2 flex-col overscroll-x-none"></div>
+        <div
+          id="card-items"
+          class="flex justify-between mb-2 flex-col overscroll-x-none"
+        ></div>
 
         <p class="font-bold">Total: <span id="card-total">0.00</span></p>
         <p class="font-bold mt-4">Endereço de entrega:</p>
@@ -315,17 +317,17 @@
           class="w-full border-2 p-1 rounded-md my 1"
         />
 
-        <p id="address-warn"class="text-red-800 hidden" >
+        <p id="address-warn" class="text-red-800 hidden">
           Digite seu endereço completo!
         </p>
 
-        <div class="flex items-center justify-between mt-4 w-full   ">
+        <div class="flex items-center justify-between mt-4 w-full">
           <button id="close-modal-btn" class="bg-red-400 rounded-md px-4 py-1">
             fechar
           </button>
           <button
             id="checkout-btn"
-            class="bg-green-700 text-white px-4 rounded-md py-1 "
+            class="bg-green-700 text-white px-4 rounded-md py-1"
           >
             finalizar pedido
           </button>
@@ -333,7 +335,6 @@
       </div>
     </div>
 
- 
     <footer
       class="border-2 border-blue-950 w-full bg-red-500 py-2 fixed bottom-0 z-40 flex items-center justify-center"
     >
@@ -345,9 +346,11 @@
         <i class="fa fa-card-plus text-sm text-white">🛒</i>
       </button>
     </footer>
-  +
-  
-  script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -135,7 +135,7 @@ checkoutBtn.addEventListener("click", function () {
 
 
   const isOpem = checkRestalrantOpem
-  if (isOpem) {
+  if (!isOpem) {
     Toastify({
       text: "ops! estamos fechado no momento",
       duration: 3000,
@@ -143,7 +143,7 @@ checkoutBtn.addEventListener("click", function () {
       newWindow: true,
       close: true,
       gravity: "top", // `top` or `bottom`
-      position: "left", // `left`, `center` or `right`
+      position: "center", // `left`, `center` or `right`
       stopOnFocus: true, // Prevents dismissing of toast on hover
       style: { background: "#ef4444" }
     }).showToast();
@@ -169,8 +169,8 @@ checkoutBtn.addEventListener("click", function () {
 
     const cartItem = cart.map((item) => {
       return (
-        `${item.name} Quantidade: (${item.quantity}) preço R$: (${item.pricie.toFixed(2)})|
-      `
+        `${item.name} Quantidade: (${item.quantity}) preço R$: (${item.pricie.toFixed(2)})  | 
+        `
       )
 
     }).join("")
