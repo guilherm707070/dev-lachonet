@@ -135,7 +135,7 @@ checkoutBtn.addEventListener("click", function () {
 
 
   const isOpem = checkRestalrantOpem
-  if (!isOpem) {
+  if (isOpem) {
     Toastify({
       text: "ops! estamos fechado no momento",
       duration: 3000,
@@ -176,7 +176,7 @@ checkoutBtn.addEventListener("click", function () {
 
     }).join("")
     const mensage = encodeURIComponent(cartItem)
-    const phone = "73982023570"
+    const phone = "77070707070"
     window.open(`https://wa.me/${phone}?text=${mensage}*Emdereço: ${aderessInput.value}*`,)
     cart = []
     updateCartModal()
