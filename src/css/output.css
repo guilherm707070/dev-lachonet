@@ -1919,6 +1919,11 @@ video {
   border-color: rgb(23 37 84 / var(--tw-border-opacity, 1));
 }
 
+.border-red-800 {
+  --tw-border-opacity: 1;
+  border-color: rgb(153 27 27 / var(--tw-border-opacity, 1));
+}
+
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity, 1));
@@ -2678,8 +2683,20 @@ video {
   --cor-05:#000000;
 }
 
+@media (max-width:768px) {
+  .laal{
+    max-height: 300px;
+    overflow-y:scroll ;
+  }
+}
+
 body{
   background-color: var(--cor-01);
+}
+
+.laal{
+  max-height: 600px;
+  overflow-y:auto ;
 }
 
 @media (min-width: 640px) {

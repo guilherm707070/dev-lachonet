@@ -9,7 +9,20 @@
     --cor-04:#512A2F;
     --cor-05:#000000;
 }
+@media (max-width:768px) {
+   
+    .laal{
+       
+        max-height: 300px;
+        overflow-y:scroll ;
+    }
+    
+}
 body{
     background-color: var(--cor-01);
     
+}
+.laal{
+    max-height: 600px;
+    overflow-y:auto ;
 }
