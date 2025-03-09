@@ -134,8 +134,8 @@ checkoutBtn.addEventListener("click", function () {
 
 
 
-  const isOpem = checkRestalrantOpem
-  if (isOpem) {
+  const isOpem = checkRestalrantOpem()
+  if (!isOpem) {
     Toastify({
       text: "ops! estamos fechado no momento",
       duration: 3000,
@@ -150,13 +150,22 @@ checkoutBtn.addEventListener("click", function () {
     return;
   }
   if (cart.length === 0) {
+    Toastify({
+      text:"adicione um item no carrinho",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "center", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: { background: "#a5544" }
+    }).showToast();
+
     return;
   }
 
-  if (cart.length === 0) {
-
-    return;
-  }
+ 
 
   if (aderessInput.value === "") {
 
